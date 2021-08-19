@@ -1,0 +1,32 @@
+
+/*.h2{
+font-size:2rem;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+*/
+.text-img{
+width:250px;
+height:auto;
+box-shadow:-10px -10px 10px 2px black;
+}
+.Text-Place{
+position:absolute;
+top:0px;
+left:13%;
+border-radius:10px;
+box-shadow:10px 10px 10px maroon;
+width:300px;
+height:auto;
+background:#000;
+text-align:center;
+color:#fff;
+font-family:Courier new,monospace;
+}
+@media only screen and (min-width:600px) {
+.part-two{
+top:70px;
+}
+}
+    

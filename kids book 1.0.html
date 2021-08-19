@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<title>kids book 1st page</title>
+       <style type="text/css">
+       *{margin:0; padding:0;}
+
+
+/*first loooding  start hear*/       
+       
+       #first-hading,.moon{
+       opacity:0;
+       }
+       #first-hading,.moon{
+       animation-name:firstLoging;
+       animation-duration:1.5s;
+       animation-delay:0s;
+       }
+       @keyframes firstLoging{
+       0%{opacity:1.0;
+             }
+       50%{opacity:1.0;
+             }
+       75%{opacity:1.0;
+             }
+       85%{opacity:1.0;
+             }
+       100%{opacity:0;
+             }
+       }
+/*first loooding end hear*/
+              
+              
+ /*--main display part/laver-1 start hear*/   
+         #Mainlavel{
+      opacity:1;
+      }
+      #Mainlavel{
+      animation-name:Mainlavel;
+      animation-duration:1.5s;
+      animation-delay:0s;
+      }
+      @keyframes Mainlavel{
+      0%{opacity:0;}
+      50%{opacity:0;}
+      75%{opacity:0;}
+      85%{opacity:0;}
+      100%{opacity:1;}
+      }
+ /*--main display part/laver-1 end hear*/   
+        
+       
+       </style>
+</head>
+<body>
+
+<!--first loooding start hear-->      
+ <div id="first-start">
+    <div>
+       <h1 id="first-hading">kids book</h1>
+    </div>
+    <!--2d Animation-->
+    <div class="moon">
+    <p class="loading">&nbsp&nbsp LOODING &nbsp•••></p>
+    <span class="left"><<</span>
+    <input type="radio" class="left">
+    <span class="right">>></span>
+    <input type="radio" class="right">
+    <div class="dog"></div>
+    </div>
+
+<style type="text/css">
+#first-hading{
+padding-top:50px;
+box-shadow:1px 10px 100px ;
+text-align:center;
+}
+
+/* 2d Animation*/
+
+
+body{
+background:#fff;
+}
+
+.moon{
+position:absolute;
+width:300px;
+height:300px;
+border:1px solid black;
+border-radius:50%;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+background:#d8d8d8;
+box-shadow:inset 15px 15px 10px #999;
+
+}
+.dog{
+position: absolute;
+top:50%;
+left:51%;
+transform: translate(-50%,-50%);
+background: transparent url('/storage/emulated/0/Download/spritesheet (1).png') 0 0 no-repeat;
+width:302px;
+height:205px;
+margin:2em auto;
+animation:run 1s steps(21)infinite;															
+}
+@keyframes run{
+100%{																				background-position: -6342px, 0;
+}
+}
+p.loading{
+width:100%;
+height:30px;
+font-family:'monospace';
+position:absolute;
+left:0;
+bottom:-50px;
+color:4c4c4c;
+font-size:20px;
+text-shadow:1px 1px 1px #737373;
+text-align:center;
+}
+
+input.left, input.right,span.left,span.right{
+position:absolute;
+top:20px;
+width:20px
+height:20px;
+cursor:pointer;
+z-index:20;
+}
+span.left,span.right{
+pointer-events: none;
+color:4c4c4c;
+font-size:20px;
+text-shadow:1px 1px 1px #737373;
+}
+input.left,span.left{left:0;}
+input.right, span.right{right:0px;}
+input.left, input.right{opacity:0;}
+.left:checked ~ .dog {
+transform: translate(-50%,-50%);
+transform:rotateY(180deg);
+}
+</style>
+<!--first loooding end hear-->     
+ 
+ 
+ 
+ 
+ <!--main display part/laver-1 start hear-->     
+ 
+<div id="Mainlavel">
+<i><h3 class="bg-success"> Shoucoose your lavel</h3></i>
+<br/>
+  <div class="lavel">
+     <button id="myBtn" class="dropbtn">lavel</button>
+     <div id="mylavel" class="lavel-content">
+         <a class="bg-success" href="Lavel-1.html">Lavel-1</a>
+         <a class="bg-primary" href="Lavel-2.html">Lavel-2</a>
+         <a class="bg-success" href="Lavel-3.html">Lavel-3</a>
+     </div>
+  </div> 
+</div>
+<style type="text/css">
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin:0 0 0 50px;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+.lavel {
+  position: relative;
+  display: inline-block;
+}
+
+.lavel-content{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.lavel-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.lavel-content a:hover {background-color: #f1f1f1}
+.show {display:block;}
+</style>
+
+<script>
+// Get the button, and when the user clicks on it, execute myFunction
+document.getElementById("myBtn").onclick = function() {myFunction()};
+
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the lavel content */
+function myFunction() {
+  document.getElementById("mylavel").classList.toggle("show");
+}
+
+</script>
+
+
+  <!--main display part/laver-1 end hear-->     
+  
+  
+ 
+ 
+ 
+ </div>
+</body>
+</html>
