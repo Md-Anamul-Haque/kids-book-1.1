@@ -7,7 +7,7 @@
     <title>sound of a-z</title>
     
     <style type="text/css">
-*{ border:solid; outline:none; margin:0; padding:0; box-sizing:border-box;}
+*{outline:none; margin:0; padding:0; box-sizing:border-box;}
 .mybtn{
     background: green;
     color: white;
@@ -45,12 +45,48 @@ body {
   }
 
 
-.ft h1{outline:none; background:blue; border-radius:5px 5px 30px 30px; position:fixed; top:0; left:auto; width:100%;}
+.ft,.ft h1{z-index:10; outline:none; background:blue; border-radius:5px 5px 30px 30px; position:fixed; top:0; left:auto; width:100%;}
 .anim{
 box-shadow:0 15px 18px 9px blue;
 transform:scale(0.9);
-opacity:0.5;
+animation:squish 0.5s;
+opacity:0.9;
+background:linear-gradient(to right,red,green,blue);
+/*filter:blur(7px) contrast(11);*/
+filter:url('#wave');
+border-radius:20px;
 }
+@keyframes squish {
+ 0%{
+    transform:scaleY(1);
+   }
+ 60%{
+    transform:scaleY(1.3);
+   }
+ 80%{
+    transform:scaleY(0.9);
+   }
+ 100%{
+    transform:scaleY(1);
+   }
+
+/*fequancy*/
+
+
+
+button{
+font-family:Impact;
+position:relative;
+color:white;
+}
+.mybtn:before{
+content:'';
+width:100%; height:100%;
+position:absolute;
+z-index:-1;
+top:0; left:0;
+}
+
 </style>
 
 </head>
@@ -90,6 +126,19 @@ opacity:0.5;
 <h3>&copy kids book</h3>
 </div>
 
+<!--svg start hear-->
+<svg>
+    <defs>
+        <filter id="wave">        
+        <feTurbulence type='fractalNoise' baseFrequency='0.08 0.8' numOctaves='1' result='warp' />
+        <feDisplacementMap xChannelSelector= 'R' yChannelSelector='G' scale='10'
+        in='SourceGraphic' in2='warpOffset' />
+        </filter>
+    </defs>
+</svg>
+<!--svg end hear-->
+
+
 <script type="text/javascript">
 
 for(var i=0; i<26; i++){
@@ -106,13 +155,39 @@ var audio = new Audio(tex+'.wav');
 }
 var sb=document.querySelector("."+tex);
 sb.classList.add("anim");
-
-
 setTimeout(function(){
 sb.classList.remove("anim");
 },700);
 });
 }
+
+
+
+/*svg Frequency start hear*/
+
+
+const buttons = document.querySelectorAll('button');
+const turbulence = document.querySelector('feTurbulence');
+let verticalFrequency = 0.00001;
+turbulence.setAttribute('baseFrequency', verticalFrequency + '0.00001');
+const steps = 30;
+const interval = 100;
+buttons.forEach(function(button){
+button.addEventListener('click', function(){
+verticalFrequency = 0.00001;
+for(i=0; i<steps; i++) {
+setTimeout(function(){
+verticalFrequency += 0.009;
+turbulence.setAttribute('baseFrequency', verticalFrequency + '0.00001');
+}, i * interval);
+}
+setTimeout(function(){
+verticalFrequency = 0.0001;
+turbulence.setAttribute('baseFrequency', verticalFrequency + '0.00001');
+}, steps * interval);
+});
+});
+/*svg Frequency end hear*/
 
 </script>
 </body>
